@@ -29,9 +29,6 @@ const { Sequelize, DataTypes} = require('sequelize');
         allowNull: false,
     },
 
-    invitedBuddies: {
-        type: Sequelize.ARRAY(DataTypes.STRING),
-    },
     startDate: {
         type: Sequelize.DATE,
         defaultValue: false,
