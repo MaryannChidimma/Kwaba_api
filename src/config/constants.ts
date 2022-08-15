@@ -8,6 +8,7 @@ const constants = {
   DATABASE_URI: process.env.DATABASE_URI,
   JWT_SECRET_KEY: process.env.JWT_TOKEN_SECRET,
   JWT_USER_LOGIN_EXPIRATION: "2h",
+  BASE_URL:  process.env.BASE_URL,
   
   // Database Configuration
   DB_CONFIGURATION: {
