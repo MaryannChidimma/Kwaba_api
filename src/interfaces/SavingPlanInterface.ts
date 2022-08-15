@@ -9,7 +9,9 @@ interface ISavingPlan {
     relationshipWithBuddies: string
     invitedBuddies: [],
     startDate: Date,
-    enddate: Date
+    enddate: Date,
+    creator: string
+    id? : number
   }
   
   export {
