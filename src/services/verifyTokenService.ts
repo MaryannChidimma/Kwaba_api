@@ -1,9 +1,7 @@
-const InvitationModel = require('../models/invitationModel');
-const UserModel = require('../models/userModel');
-const { NotFoundError } = require('../../lib/errors');
-const { decryptData } = require('../utility/dataCrypto');
-
-const models = { InvitationModel, UserModel };
+import db from '../models/index'
+const { Model: InvitationModel} = db
+import { NotFoundError } from '../../lib/appError';
+import { decryptData } from '../utility/dataCrypto';
 
 const verifyToken = async (Model:any, token:string, errorMessage:string) => {
   const [jwtToken, Id] = token.split('__');
@@ -19,6 +17,6 @@ const verifyToken = async (Model:any, token:string, errorMessage:string) => {
   return item;
 };
 
-module.exports = {
+export = {
   verifyToken,
 };

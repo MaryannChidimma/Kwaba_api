@@ -24,9 +24,10 @@ const encryptData = function (
 
 const decryptData = function (
   tokenToDecrypt: string,
+  secretKey: string = constants.JWT_SECRET_KEY!
 ) {
  
-  const decryptedData = jwt.verify(tokenToDecrypt, constants.JWT_SECRET_KEY!);
+  const decryptedData = jwt.verify(tokenToDecrypt, secretKey!);
   return decryptedData as any;
 };
 
