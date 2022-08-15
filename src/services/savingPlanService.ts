@@ -1,12 +1,12 @@
 import { BadRequestError, NotFoundError } from "../../lib/appError";
 import db from "../models";
 const { SavingPlanModel} = db
+import UserModel from "../models/index";
 import { ISavingPlan} from "../interfaces/SavingPlanInterface"
 import constants from "../config/constants";
 const { MESSAGES } = constants
 
-
-class UserServices {
+class SavingPlans {
    /**
      * @method addUser
      * @async
@@ -15,8 +15,8 @@ class UserServices {
      */  
   async createPlan(data: ISavingPlan): Promise<ISavingPlan> {
 
-      const existingUser = await SavingPlanModel.findOne({where: { title: data.title }});
-      if (existingUser) throw new NotFoundError(MESSAGES.SAVING_PLAN_EXIST);
+      const existingPlan = await SavingPlanModel.findOne({where: { title: data.title }});
+      if (existingPlan) throw new NotFoundError(MESSAGES.SAVING_PLAN_EXIST);
   
       const savingPlan = await SavingPlanModel.create(data);
       return savingPlan;
@@ -30,7 +30,8 @@ class UserServices {
 
     return existingPlan;
   } 
+
 }
 
 
-export default new UserServices();
+export default new SavingPlans();

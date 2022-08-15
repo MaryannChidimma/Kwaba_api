@@ -5,11 +5,12 @@ import { Validator } from "../validators";
 import {
  CreatePlanSchema
 } from "../validators/savingPlanShema";
-
+import { authenticate} from "../middlewares/auth"
 
 function savingPlanRouter() {
   router.post(
     "/",
+    authenticate,
     Validator(CreatePlanSchema, "body"),
     savingPlanController.createPlan
   );
