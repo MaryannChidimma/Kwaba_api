@@ -14,3 +14,7 @@ This project can be installed by
 ## Documentation
 
 + Click `https://documenter.getpostman.com/view/21531977/VUjSH4ti` to view documentation
+
+## Technical Design
+
++ click `https://drive.google.com/file/d/13PZb2tU_PNe1Uvsl7frZSYuKr29vAPiN/view?usp=sharing` to view the technical design
