@@ -9,6 +9,7 @@ const constants = {
   JWT_SECRET_KEY: process.env.JWT_TOKEN_SECRET,
   JWT_USER_LOGIN_EXPIRATION: "2h",
   BASE_URL:  process.env.BASE_URL,
+  SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
   
   // Database Configuration
   DB_CONFIGURATION: {
@@ -25,11 +26,6 @@ const constants = {
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || "",
     EMAIL_HOST: process.env.EMAIL_HOST || "",
     EMAIL_PORT: Number(process.env.EMAIL_PORT) || 587,
-  },
-
-  // The name of all our collections in the database
-  DB_COLLECTION: {
-    USER: "USER",
   },
 
   MESSAGES: {
