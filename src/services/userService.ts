@@ -1,5 +1,5 @@
 import { BadRequestError, NotFoundError } from "../../lib/appError";
-import UserModel from "../models/UserModel";
+import UserModel from "../models/index";
 import { AUser, UserLogin} from "../interfaces/UserInterfaces"
 import constants from "../config/constants";
 import { comparePassword, encryptData} from "../utility/dataCrypto"
@@ -67,6 +67,11 @@ class UserServices {
 
     return dataToSend;
   }
+
+ async getUserById (id : number){
+    const user = await UserModel.findByPk(id)
+    return user
+ }
   
 }
 
