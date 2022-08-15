@@ -2,11 +2,14 @@
 import  { Sequelize } from "sequelize";
 import constants  from "../config/constants";
 import SavingPlanModel from "./savingPlanModel";
+import UserModel  from "./UserModel";
+import invitationModel from "./invitationModel"
+
 
 const { DB_CONFIGURATION , NODE_ENV} = constants
 
 const createModels = (env:string) => {
-  let sequelize: any;
+  let sequelize: any
   if (NODE_ENV == "development") {
     const { database, username, password } = DB_CONFIGURATION;
     sequelize = new Sequelize(database, username, password, {
@@ -26,9 +29,9 @@ const createModels = (env:string) => {
   console.log("Successfully connected to database");
 
   const db = {
-    SavingPlanModel : sequelize.define('savingplans', SavingPlanModel)
+    SavingPlanModel : sequelize.define('savingplans', SavingPlanModel),
+    InvitationModel : sequelize.define( 'invitations', invitationModel),
   }
-  //const savingplanModel = 
   return db
 };
 

@@ -9,6 +9,7 @@ This project can be installed by
 + Check what is required in the env from that sampleEnv file, then supply the appropriate values.
 + Run the command `npm install` to intall all dependencies used
 + Run the command `npm run dev`
++ Run the command `npm run migrate:up` to add tables to database
 
 ## Documentation
 
