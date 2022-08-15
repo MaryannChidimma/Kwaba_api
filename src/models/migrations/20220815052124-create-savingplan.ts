@@ -1,7 +1,6 @@
 
-import { ARRAY } from 'sequelize';
 import { QueryInterface, DataTypes, Sequelize } from 'sequelize';
-//const { DataTypes} = require('sequelize');
+
 export = {
   async up(queryInterface: QueryInterface, Sequelize: Sequelize) {
     await queryInterface.createTable('savingplans', {
