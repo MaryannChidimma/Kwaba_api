@@ -4,7 +4,7 @@ const { InvitationModel} = db
 import UserModel from "../models/index";
 import { Invitation} from "../interfaces/InvitationInterface"
 import { encryptData} from "../utility/dataCrypto"
-import sendMail from "../utility/email"
+import {sendInvitationEmailToUser} from "../utility/emails/emailConfigs/sendInvite"
 import constants from "../config/constants";
 
 const { MESSAGES, BASE_URL } = constants
@@ -29,7 +29,7 @@ class InviteService {
         const acceptLink = `${BASE_URL}/invitation/${token}`;
         const declineLink = `${BASE_URL}/invitation/decline/${token}`
 
-        sendMail(data.email, "Kwaba Saving Plan Invite", { acceptLink, declineLink})
+        await sendInvitationEmailToUser( { email: data.email , acceptLink, declineLink})
   }
 
   acceptInvitation = async (data: any) => {
